@@ -1,0 +1,46 @@
+clear
+emulate sh -c 'source /etc/profile'
+
+#Mehr Informationen zur Shell-Individualisierung unter: https://wiki.ubuntuusers.de/Bash/Prompt/
+
+#Shell-Design laden
+autoload -Uz promptinit
+promptinit
+prompt fade blue
+
+#Farbvariablen Global zur Verfügung stellen - Können mit echo -e verwendet werden
+KOLORO_RUGA='\033[0;31m'
+KOLORO_LUMO_RUGA='\033[0;31m'
+KOLORO_MAL='\033[0m'
+KOLORO_BLUA='\033[0;34m'
+KOLORO_LUMO_BLUA='\033[1;34m'
+KOLORO_FLAVA='\033[1;33m'
+#LIGHTGREEN='\033[1;32m'
+#LIGHTCYAN='\033[1;36m'
+#LIGHTPURPLE='\033[1;35m'
+KOLORO_MALHELGRIZA='\033[1;30m'
+
+#Designvariablen zur Verfügung stellen
+DEZAJNO_LINIO="----------------------------------------------------------------"
+
+TEMPERATURO=$(/opt/vc/bin/vcgencmd measure_temp);
+#Systeminformationen ausgeben
+echo -e $KOLORO_LUMO_BLUA 
+echo -e $DEZAJNO_LINIO;
+echo -e
+echo -e Bonvenon al la kosmopolita reto!
+echo -e 
+echo -e "USER:          $KOLORO_MAL $USER $KOLORO_LUMO_BLUA"
+echo -e "PATH:          $KOLORO_MAL $PATH $KOLORO_LUMO_BLUA"
+echo -e "LANG:          $KOLORO_MAL $LANG $KOLORO_LUMO_BLUA"
+echo -e "HOSTNAME:      $KOLORO_MAL $HOST $KOLORO_LUMO_BLUA"
+echo -e "TEMPERATURO:   $KOLORO_MAL $TEMPERATURO $KOLORO_LUMO_BLUA";
+echo -e "SHELL:         $KOLORO_MAL $SHELL $KOLORO_LUMO_BLUA";
+#echo -e "IP" & ifconfig;
+#if [ $SSH_CONNECTION ]; 
+#    then
+#echo -e "SSH_CONNECTION:$KOLORO_MAL $SSH_CONNECTION $KOLORO_LUMO_BLUA"
+#fi;
+echo -e "ADMINISTRADO:  $KOLORO_MAL Kevin Frantz[mail@kevin-frantz.de] $KOLORO_LUMO_BLUA"
+echo -e 
+echo -e $DEZAJNO_LINIO;
